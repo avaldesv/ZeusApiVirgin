@@ -70,7 +70,8 @@ public class UsuariosControler {
     
       @RequestMapping({"/usuarios/remove"})
      public void DeleteUsuarios(@RequestBody Usuarios user){
-        System.out.println("ELIMINAR USUARIO");
+        System.out.println("ELIMINAR USUARIO  "+ user.getIdUsuario()+" " +user.getNombre()+" "+user.getApellidos());
+        
          usuariosService.deletebyId(user);
     }
      

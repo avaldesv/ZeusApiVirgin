@@ -126,6 +126,21 @@ public class UsuariosDaotImp implements UsuariosDao {
                 currentSession.update(e);
 
             }
+            //-----add new
+            Criteria crisup = currentSession.createCriteria(Usuarios.class);
+            crisup.add(Restrictions.eq("idSupervisor", new Integer(user.getIdUsuario())));
+            ScrollableResults itemsup = crisup.scroll();
+
+            while (itemsup.next()) {
+
+                Usuarios e = (Usuarios) itemsup.get(0);
+                e.setIdSupervisor(0);
+                currentSession.update(e);
+
+            }
+            //--------
+            
+            
             if (!currentSession.createCriteria(Ventas.class).add(Example.create(v)).createAlias("idUsuario", "idUsuario").add(Restrictions.eq("idUsuario.idUsuario", user.getIdUsuario())).list().isEmpty()) {
                 user.setEliminada(1);
                 currentSession.update(user);

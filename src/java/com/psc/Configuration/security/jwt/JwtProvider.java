@@ -25,7 +25,7 @@ public class JwtProvider {
     @Value("pepito")
     private String jwtSecret;
 
-    @Value("3600")
+    @Value("28800")
     private int jwtExpiration;
      
     @Value("3600")

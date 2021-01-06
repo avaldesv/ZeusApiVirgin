@@ -6,6 +6,7 @@
 package com.psc.Controler;
 
 import com.google.gson.Gson;
+import com.psc.Entity.Lineasasociadas;
 import com.psc.Entity.Tomador;
 import com.psc.Entity.Usuarios;
 import com.psc.Entity.Ventas;
@@ -13,8 +14,10 @@ import com.psc.Model.ExportarVentas;
 import com.psc.Model.UsuariosObj;
 import com.psc.Model.VentasObj;
 import com.psc.Service.ExportarVentaService;
+import com.psc.Service.LineasasociadasService;
 import com.psc.Service.UsuariosService;
 import com.psc.Service.VentasService;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.Resource;
@@ -48,6 +51,9 @@ public class VentasControler {
       
            @Resource   
      private UsuariosService usuariosService;
+           
+           @Resource   
+     private LineasasociadasService lineasasociadasService; 
 
     @RequestMapping({"/ventas/{id}/{fechaI}/{fechaF}"})
      public List<VentasObj> listar(@PathVariable("id") int id,@PathVariable("fechaI") String fechaI,@PathVariable("fechaF") String fechaF){
@@ -140,6 +146,27 @@ public class VentasControler {
      public VentasObj AddUsuario(@RequestBody Ventas obj){
         System.out.println("Add Ventas new");
         System.out.println(new Gson().toJson(obj));
+        
+        if(obj.getIdVentas() != null){
+        VentasObj ventadb = ventasService.ListarbyId(obj.getIdVentas());
+            
+            List<Lineasasociadas> lineas_elimidados = new ArrayList<Lineasasociadas>();
+        
+		  ventadb.getLineasasociadasList().forEach(asodb ->{
+                      System.out.println("linea "+ asodb.getId());
+                     Lineasasociadas a = new Lineasasociadas();
+                     a.setId(asodb.getId());
+	        	if(!obj.getLineasasociadasList().contains(a))
+	        		lineas_elimidados.add(a);
+	        });
+		  lineas_elimidados.forEach(p ->{
+			  lineasasociadasService.deletebyId(p);
+	        });
+		  
+		//  objdb.setEncargados(objin.getEncargados());
+        
+        }
+        
         return ventasService.add(obj);
     }
      

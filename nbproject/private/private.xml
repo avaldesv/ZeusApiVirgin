@@ -13,16 +13,6 @@
             <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Controler/UsuariosControler.java</file>
             <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Controler/VentasControler.java</file>
         </group>
-        <group name="Virgin-Angular-Api">
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Controler/VentasControler.java</file>
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Model/VentasObj.java</file>
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Entity/Tomador.java</file>
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Entity/Ventas.java</file>
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/apizeus/DataSourceConfig.java</file>
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Service/ExportarVentaService.java</file>
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Model/ExportarVentas.java</file>
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Dao/VentasDaoImp.java</file>
-            <file>file:/F:/ZEUS-NEW/Zeus-Virgin%20(Angular+ApiRest)/ApiRestVirgin/ApiRestVirgin/src/java/com/psc/Service/VentasService_Imp.java</file>
-        </group>
+        <group name="Virgin-Angular-Api"/>
     </open-files>
 </project-private>
